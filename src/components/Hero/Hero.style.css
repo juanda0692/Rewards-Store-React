@@ -1,0 +1,15 @@
+.hero {
+	position: relative;
+}
+
+.hero h1 {
+	position: absolute;
+	top: 75%;
+	left: 10%;
+	color: #ffffff;
+	font-size: 3rem;
+}
+
+.hero img {
+	max-width: 100%;
+}

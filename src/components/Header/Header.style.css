@@ -1,0 +1,33 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 2rem;
+}
+
+.header-user,
+.header-user_coins {
+	display: flex;
+	align-items: center;
+}
+
+.header-user {
+	width: 15rem;
+	justify-content: space-evenly;
+}
+
+.header-user span {
+	font-size: 1.2rem;
+	color: #616161;
+}
+
+.header-user_coins {
+	background-color: #ededed;
+	border-radius: 100px;
+	padding: 0.3rem 0.7rem;
+}
+
+.header-user_coins span {
+	margin-right: 0.5rem;
+}
