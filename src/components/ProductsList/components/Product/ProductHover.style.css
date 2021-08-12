@@ -1,0 +1,83 @@
+.product.hover {
+	cursor: pointer;
+	transition: all 0.3s ease-in;
+	transform: translate(0, -3%);
+	-webkit-animation: shadow-drop-center 0.4s
+		cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: shadow-drop-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.product-layer.hover {
+	position: absolute;
+	background: linear-gradient(-180deg, #0ad4fa 0%, #25bbf1 100%);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	opacity: 0.8;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@-webkit-keyframes shadow-drop-center {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+		box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+	}
+}
+@keyframes shadow-drop-center {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+		box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+	}
+}
+
+.product-buyIcon.hover {
+	position: absolute;
+	top: 5%;
+	left: 85%;
+	width: 12%;
+	z-index: 20;
+}
+
+.product-value.hover {
+	/* position: relative;
+	top: 50%;
+	left: 50%; */
+	z-index: 20;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	opacity: 1;
+}
+
+.product-value.hover span {
+	color: #ffffff;
+	font-size: 2.25rem;
+}
+
+.product-redeem_button.hover {
+	cursor: pointer;
+	text-align: center;
+	padding: 0.7rem 4.5rem;
+	font-size: 1.1rem;
+	border-radius: 6.25rem;
+	border: none;
+	color: #616161;
+	/* position: relative;
+	top: 0;
+	left: 0; */
+	/* z-index: 20; */
+}

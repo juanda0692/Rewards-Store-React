@@ -6,7 +6,7 @@ import ProductsList from "../../components/ProductsList/ProductsList.jsx";
 import FooterBar from "../../components/FooterBar/FooterBar.jsx";
 
 // Context provider
-import { AppProvider } from "../contexts/AppContext";
+import { AppProvider } from "../../contexts/AppContexts.js";
 
 // Styles
 import "./App.styles.css";

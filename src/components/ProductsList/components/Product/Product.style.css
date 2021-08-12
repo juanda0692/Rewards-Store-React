@@ -6,6 +6,8 @@
 	flex-direction: column;
 	position: relative;
 	padding-bottom: 3rem;
+	transition: all 0.3s ease-in;
+	transform: translate(0);
 }
 
 .product-buyIcon {
