@@ -9,17 +9,21 @@
 
 .product-layer.hover {
 	position: absolute;
-	background: linear-gradient(-180deg, #0ad4fa 0%, #25bbf1 100%);
 	top: 0;
 	left: 0;
+	bottom: 0;
 	width: 100%;
-	height: 100%;
-	z-index: 10;
-	opacity: 0.8;
+	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	background: linear-gradient(
+		180deg,
+		rgba(10, 212, 250, 0.86) 0%,
+		rgba(37, 187, 241, 0.86) 100%
+	);
 }
 
 @-webkit-keyframes shadow-drop-center {
@@ -48,24 +52,22 @@
 	top: 5%;
 	left: 85%;
 	width: 12%;
-	z-index: 20;
 }
 
 .product-value.hover {
-	/* position: relative;
-	top: 50%;
-	left: 50%; */
-	z-index: 20;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	opacity: 1;
 }
 
 .product-value.hover span {
 	color: #ffffff;
 	font-size: 2.25rem;
+}
+
+.product-value.hover img {
+	padding-top: 0.3rem;
 }
 
 .product-redeem_button.hover {
@@ -75,9 +77,11 @@
 	font-size: 1.1rem;
 	border-radius: 6.25rem;
 	border: none;
+	background-color: #ffffff;
 	color: #616161;
-	/* position: relative;
-	top: 0;
-	left: 0; */
-	/* z-index: 20; */
+	margin-top: 0.5rem;
+}
+
+.product-redeem_button.hover:hover {
+	background: linear-gradient(90deg, #f5f7fa 0%, #c3cfe2 100%);
 }

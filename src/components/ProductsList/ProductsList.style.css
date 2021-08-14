@@ -1,3 +1,7 @@
 .productsList {
 	margin: 2rem 0;
+	padding: 0 8rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0.8rem;
 }

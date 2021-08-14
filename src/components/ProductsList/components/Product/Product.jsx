@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 // AppContext
-import { AppContext } from "../../../../contexts/AppContexts";
+import { ProductContext } from "../../../../contexts/productContexts.js";
 
 // Styles
 import "./Product.style.css";
 import "./ProductHover.style.css";
 
-export default function Product() {
-	const { hoverProduct, setHoverProduct } = useContext(AppContext);
+export default function Product({ name, category, img, cost }) {
+	const [hoverProduct, setHoverProduct] = useState(false);
+	// const [productData, setProductData] = useContext(ProductContext);
 
 	return (
 		<>
@@ -24,14 +25,10 @@ export default function Product() {
 						src="/assets/icons/buy-blue.svg"
 						alt="buy blue icon"
 					/>
-					<img
-						className="product-img"
-						src="/assets/product-pics/AcerAspire-x1.png"
-						alt="product"
-					/>
+					<img className="product-img" src={img.hdUrl} alt="product" />
 					<div className="product-separator"></div>
-					<span>Laptops</span>
-					<h3>Acer Aspire</h3>
+					<span>{category}</span>
+					<h3>{name}</h3>
 				</div>
 			) : (
 				<div
@@ -47,19 +44,15 @@ export default function Product() {
 							alt="buy white icon"
 						/>
 						<div className="product-value hover">
-							<span>12.000</span>
+							<span>{cost}</span>
 							<img src="/assets/icons/coin.svg" alt="Coin icon" />
 						</div>
 						<button className="product-redeem_button hover">Redeem now</button>
 					</div>
-					<img
-						className="product-img"
-						src="/assets/product-pics/AcerAspire-x1.png"
-						alt="product"
-					/>
+					<img className="product-img" src={img.hdUrl} alt="product" />
 					<div className="product-separator"></div>
-					<span>Laptops</span>
-					<h3>Acer Aspire</h3>
+					<span>{category}</span>
+					<h3>{name}</h3>
 				</div>
 			)}
 		</>

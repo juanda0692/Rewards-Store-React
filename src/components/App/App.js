@@ -6,22 +6,25 @@ import ProductsList from "../../components/ProductsList/ProductsList.jsx";
 import FooterBar from "../../components/FooterBar/FooterBar.jsx";
 
 // Context provider
-import { AppProvider } from "../../contexts/AppContexts.js";
+import { ProductProvider } from "../../contexts/productContexts.js";
+import { UserProvider } from "../../contexts/userContext.js";
 
 // Styles
 import "./App.styles.css";
 
 function App() {
 	return (
-		<AppProvider>
-			<div className="container">
-				<Header />
-				<Hero />
-				<FilterBar />
-				<ProductsList />
-				<FooterBar />
-			</div>
-		</AppProvider>
+		<UserProvider>
+			<ProductProvider>
+				<div className="container">
+					<Header />
+					<Hero />
+					<FilterBar />
+					<ProductsList />
+					<FooterBar />
+				</div>
+			</ProductProvider>
+		</UserProvider>
 	);
 }
 
