@@ -25,7 +25,12 @@ export default function Product({ name, category, img, cost }) {
 						src="/assets/icons/buy-blue.svg"
 						alt="buy blue icon"
 					/>
-					<img className="product-img" src={img.hdUrl} alt="product" />
+					<img
+						lazy="loading"
+						className="product-img"
+						src={img.hdUrl}
+						alt="product"
+					/>
 					<div className="product-separator"></div>
 					<span>{category}</span>
 					<h3>{name}</h3>

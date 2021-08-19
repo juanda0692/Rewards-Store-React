@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
 
 	useEffect(() => {
 		fetchUser(setUserData);
-	}, []);
+	}, [userData.points]);
 
 	return (
 		<UserContext.Provider value={[userData, setUserData]}>
