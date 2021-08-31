@@ -19,6 +19,7 @@ export default function ProductsList() {
 					img={product.img}
 					cost={product.cost}
 					key={product._id}
+					id={product._id}
 				/>
 			))}
 		</main>

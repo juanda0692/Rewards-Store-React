@@ -9,6 +9,7 @@ const headers = {
 		"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTAxYWJhY2Q5MDU1YjAwMjBhNjMzZGEiLCJpYXQiOjE2Mjc0OTk0MzZ9.M7x6M8SXWK4yu70uIXayu8GUSaPMH9M_1s8hfIT1_wA",
 };
 
+// FETCH GET
 // Get the user´s data with a fetch request to the API
 export const fetchUser = async (setUserData) => {
 	try {
@@ -31,6 +32,7 @@ export const getProducts = async (setProductData) => {
 	}
 };
 
+// FETCH POST
 // Add coins to the user through the fetch post to the API
 export const addCoins = async (amount, userData, setUserData) => {
 	let amountCoins = JSON.stringify({ amount: amount });
@@ -47,6 +49,33 @@ export const addCoins = async (amount, userData, setUserData) => {
 		let newPointsState = { ...userData };
 		newPointsState.points = newPointsData["new Points"];
 		setUserData(newPointsState);
+	} catch (error) {
+		alert("Ocurrió un error al obtener la información del servidor", error);
+	}
+};
+
+export const redeemProducts = async (id) => {
+	const API_URL = "https://coding-challenge-api.aerolab.co";
+	const headers = {
+		"Content-Type": "application/json",
+		Accept: "application/json",
+		Authorization:
+			"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTAxYWJhY2Q5MDU1YjAwMjBhNjMzZGEiLCJpYXQiOjE2Mjc0OTk0MzZ9.M7x6M8SXWK4yu70uIXayu8GUSaPMH9M_1s8hfIT1_wA",
+	};
+	let redeem = JSON.stringify({ productId: id });
+
+	let requestOptions = {
+		method: "POST",
+		headers,
+		body: redeem,
+	};
+
+	const request = async () => await fetch(`${API_URL}/redeem`, requestOptions);
+
+	try {
+		const result = await request();
+		const res = await result.json();
+		console.log(res);
 	} catch (error) {
 		alert("Ocurrió un error al obtener la información del servidor", error);
 	}
