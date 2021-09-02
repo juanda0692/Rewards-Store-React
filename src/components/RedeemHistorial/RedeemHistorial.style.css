@@ -1,0 +1,20 @@
+.redeemHistory {
+	text-align: center;
+}
+
+.redeemHistory h2,
+.redeemHistory p {
+	margin: 1rem 0;
+}
+
+.redeemHistory h2 {
+	color: #08bbdf;
+}
+
+.redeemHistory-products {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.8rem;
+	padding: 0 5rem;
+	margin-bottom: 3rem;
+}

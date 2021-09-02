@@ -1,0 +1,38 @@
+.productRedeem {
+	display: flex;
+	justify-content: center;
+	/* width: 100%; */
+	align-items: center;
+	box-shadow: 9px 10px 10px -5px rgba(0, 0, 0, 0.33);
+	-webkit-box-shadow: 9px 10px 10px -5px rgba(0, 0, 0, 0.33);
+	-moz-box-shadow: 9px 10px 10px -5px rgba(0, 0, 0, 0.33);
+	border-radius: 5px;
+	/* padding: 0.8rem 0rem; */
+}
+.productRedeem-img {
+	max-width: 50%;
+	object-fit: cover;
+}
+
+.productRedeem-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.5rem;
+}
+
+.productRedeem-info_cost {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	margin-top: 0.3rem;
+}
+
+.productRedeem-info_cost b {
+	padding: 0 0.3rem;
+}
+
+.productRedeem-info_cost img {
+	max-width: 25%;
+	padding: 0 0.3rem;
+}

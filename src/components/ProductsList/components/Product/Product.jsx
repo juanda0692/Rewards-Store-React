@@ -45,7 +45,7 @@ export default function Product({
 					<img
 						lazy="loading"
 						className="product-img"
-						src={img.hdUrl}
+						src={img.url}
 						alt="product"
 					/>
 					<div className="product-separator"></div>

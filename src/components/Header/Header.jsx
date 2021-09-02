@@ -6,6 +6,9 @@ import { addCoins } from "../../utilities/fetchInfo";
 // UserContext
 import { UserContext } from "../../contexts/userContext";
 
+// React Router DOM
+import { Link } from "react-router-dom";
+
 // Styles
 import "./Header.style.css";
 
@@ -26,7 +29,9 @@ export default function Header() {
 
 	return (
 		<header className="header">
-			<img src="/assets/aerolab-logo.svg" alt="Logo" />
+			<Link to="/">
+				<img src="/assets/aerolab-logo.svg" alt="Logo" />
+			</Link>
 			<div className="header-user">
 				<span>{userData.name}</span>
 				<div className="header-user_coins">
@@ -54,6 +59,11 @@ export default function Header() {
 						</ul>
 					) : null}
 				</div>
+				<Link to="/redeem-history">
+					<button className="header-user_redeemed" type="button">
+						Redeemed Products
+					</button>
+				</Link>
 			</div>
 		</header>
 	);

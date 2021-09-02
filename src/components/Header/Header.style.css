@@ -13,7 +13,7 @@
 }
 
 .header-user {
-	width: 15rem;
+	width: 30%;
 	justify-content: space-evenly;
 }
 
@@ -96,4 +96,19 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+}
+
+.header-user_redeemed {
+	cursor: pointer;
+	margin-left: 1rem;
+	padding: 0.5rem;
+	font-size: 1rem;
+	border: none;
+	background-color: #0ad4fa;
+	color: #ffffff;
+	border-radius: 5px;
+}
+
+.header-user_redeemed:hover {
+	background-color: #08bbdf;
 }
