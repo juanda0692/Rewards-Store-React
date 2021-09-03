@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 // AppContext
-// import { UserContext } from "../../../../contexts/userContext";
+import { UserContext } from "../../../../contexts/userContext";
 
 //Fetch Redeem product
 import { redeemProducts } from "../../../../utilities/fetchInfo";
+
+import Swal from "sweetalert2";
 
 // Styles
 import "./Product.style.css";
@@ -21,12 +23,41 @@ export default function Product({
 	id,
 }) {
 	const [hoverProduct, setHoverProduct] = useState(false);
-	// const [userData, setUserData] = useContext(UserContext);
-	// const [redeemProduct, setRedeemProduct] = useState("");
+	const [userData, setUserData] = useContext(UserContext);
+	const [redeemProduct, setRedeemProduct] = useState(false);
 
-	function handleRedeemProduct(id) {
-		redeemProducts(id);
-	}
+	const handleRedeemProduct = (id, cost, userPoints) => {
+		const redeemed = redeemProducts(id);
+		const userNewPoints = userPoints - cost;
+		setUserData({ ...userData, points: userNewPoints });
+		setRedeemProduct(redeemed);
+	};
+
+	const redeemMessage = () => {
+		if (redeemProducts === true) {
+			setRedeemProduct(!redeemProduct);
+		}
+
+		!redeemProduct
+			? Swal.fire({
+					customClass: {
+						confirmButton: "swalBtnColor",
+					},
+					icon: "success",
+					title: "Congratulations!",
+					text: "You've redeem the product successfully!",
+					timer: 4000,
+			  })
+			: Swal.fire({
+					customClass: {
+						confirmButton: "swalBtnColor",
+					},
+					icon: "error",
+					title: "Oops...Something went wrong",
+					text: "Please try it in a few minutes!",
+					timer: 4000,
+			  });
+	};
 
 	return (
 		<>
@@ -72,7 +103,10 @@ export default function Product({
 						<button
 							className="product-redeem_button hover"
 							type="button"
-							onClick={() => handleRedeemProduct(id)}
+							onClick={() => {
+								redeemMessage();
+								handleRedeemProduct(id);
+							}}
 						>
 							Redeem now
 						</button>

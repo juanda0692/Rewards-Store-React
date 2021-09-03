@@ -45,3 +45,7 @@
 	color: #616161;
 	font-weight: 600;
 }
+
+.swal2-styled.swal2-confirm.swalBtnColor {
+	background-color: #08bbdf;
+}

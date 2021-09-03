@@ -68,11 +68,13 @@ export const redeemProducts = async (id) => {
 	try {
 		const result = await request();
 		const res = await result.json();
-		console.log(res);
+		return res;
 	} catch (error) {
 		alert("Ocurrió un error al obtener la información del servidor", error);
 	}
 };
+
+console.log(redeemProducts);
 
 export const getHistory = async (setRedeemData) => {
 	let requestOptions = {
