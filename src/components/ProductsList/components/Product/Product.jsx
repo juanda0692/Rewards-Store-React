@@ -12,16 +12,7 @@ import Swal from "sweetalert2";
 import "./Product.style.css";
 import "./ProductHover.style.css";
 
-export default function Product({
-	name,
-	category,
-	img,
-	cost,
-	userPoints,
-	productCost,
-	productId,
-	id,
-}) {
+export default function Product({ name, category, img, cost, id }) {
 	const [hoverProduct, setHoverProduct] = useState(false);
 	const [userData, setUserData] = useContext(UserContext);
 	const [redeemProduct, setRedeemProduct] = useState(false);
@@ -62,12 +53,7 @@ export default function Product({
 	return (
 		<>
 			{!hoverProduct ? (
-				<div
-					// className={`product ${hoverProduct ? "hover" : null}`}
-					className="product"
-					onMouseEnter={() => setHoverProduct(true)}
-					// onMouseLeave={() => setHoverProduct(false)}
-				>
+				<div className="product" onMouseEnter={() => setHoverProduct(true)}>
 					<img
 						className="product-buyIcon"
 						src="/assets/icons/buy-blue.svg"
@@ -85,9 +71,7 @@ export default function Product({
 				</div>
 			) : (
 				<div
-					// className={`product ${hoverProduct ? "hover" : null}`}
 					className="product hover"
-					// onMouseEnter={() => setHoverProduct(true)}
 					onMouseLeave={() => setHoverProduct(false)}
 				>
 					<div className="product-layer hover">
