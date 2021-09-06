@@ -44,11 +44,9 @@
 	color: #ffffff;
 }
 
-/* .filterBar-sort span {
-	padding: 0 1rem;
-} */
-
-/* .filterBar-sort_filters {
+.filterBar-arrows {
 	display: flex;
-	justify-content: space-evenly;
-} */
+	width: 12%;
+	justify-content: space-around;
+	align-items: center;
+}
