@@ -14,9 +14,11 @@ import "./ProductHover.style.css";
 
 export default function Product({ name, category, img, cost, id }) {
 	const [hoverProduct, setHoverProduct] = useState(false);
-	const [userData, setUserData] = useContext(UserContext);
 	const [redeemProduct, setRedeemProduct] = useState(false);
+	const [userData, setUserData] = useContext(UserContext);
 
+	// Handle to configure products history and the user data once the
+	// product is redeemed
 	const handleRedeemProduct = (id, cost, userPoints) => {
 		const redeemed = redeemProducts(id);
 		const userNewPoints = userPoints - cost;
@@ -24,6 +26,7 @@ export default function Product({ name, category, img, cost, id }) {
 		setRedeemProduct(redeemed);
 	};
 
+	// Message of redeem products according to the success of the fetch data
 	const redeemMessage = () => {
 		if (redeemProducts === true) {
 			setRedeemProduct(!redeemProduct);
@@ -95,11 +98,6 @@ export default function Product({ name, category, img, cost, id }) {
 							Redeem now
 						</button>
 					</div>
-					{/* <RedeemInfo
-						productCost={cost}
-						userPoints={userPoints}
-						hover={hoverProduct}
-					/> */}
 					<img className="product-img" src={img.hdUrl} alt="product" />
 					<div className="product-separator"></div>
 					<span>{category}</span>

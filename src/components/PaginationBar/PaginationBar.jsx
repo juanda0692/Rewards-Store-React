@@ -72,7 +72,7 @@ export default function FilterBar({ dataLimit = 16 }) {
 							<button
 								type="button"
 								value={item.value}
-								className={`filterBar-sort_filter ${filter ? "active" : ""}`}
+								className="filterBar-sort_filter"
 								key={index}
 								onClick={handleFilter}
 							>
