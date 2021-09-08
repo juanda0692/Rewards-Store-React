@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect } from "react";
+import React, { useState, createContext } from "react";
 
 export const FilterContext = createContext();
 
@@ -16,10 +16,6 @@ export const FILTERS = [
 
 export const FilterProvider = ({ children }) => {
 	const [filter, setFilter] = useState(FILTERS[0].value);
-
-	useEffect(() => {
-		setFilter(filter);
-	}, [filter]);
 
 	return (
 		<FilterContext.Provider value={[filter, setFilter]}>

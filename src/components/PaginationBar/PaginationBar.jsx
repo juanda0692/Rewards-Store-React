@@ -1,19 +1,21 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext } from "react";
+
+// Components
+// import FilterBar from "../FilterBar/FilterBar";
 
 // Context
 import { ProductContext } from "../../contexts/productContexts";
 import { PaginationContext } from "../../contexts/paginationContext";
-import { FilterContext, FILTERS } from "../../contexts/filterContext";
+// import { FilterContext, FILTERS } from "../../contexts/filterContext";
 
 // Styles
 import "./PaginationBar.style.css";
 
-import ProductsList from "../ProductsList/ProductsList";
+// import ProductsList from "../ProductsList/ProductsList";
 
-export default function FilterBar({ dataLimit = 16 }) {
+export default function PaginationBar({ dataLimit = 16 }) {
 	const [productData] = useContext(ProductContext);
 	const [currentPage, setCurrentPage] = useContext(PaginationContext);
-	const [filter, setFilter] = useContext(FilterContext);
 
 	// Pagination
 	const pages = Math.round(productData.length / dataLimit);
@@ -34,54 +36,18 @@ export default function FilterBar({ dataLimit = 16 }) {
 		setCurrentPage((page) => page - 1);
 	}
 
-	// Conditional Switch to set the products by cost filter
-	const filteredProducts = useMemo(() => {
-		switch (filter) {
-			case "Highest Price": {
-				return [...productData].sort((a, b) => b.cost - a.cost);
-			}
-
-			case "Lowest Price": {
-				return [...productData].sort((a, b) => a.cost - b.cost);
-			}
-
-			case "Most Recent":
-			default: {
-				return productData;
-			}
-		}
-	}, [filter, productData]);
-
-	// Handle event of the buttons filter
-	const handleFilter = (e) => {
-		setFilter(e.target.innerHTML);
-	};
-
 	return (
 		<>
-			<div className="filterBar">
-				<div className="filterBar-sort">
+			<div className="paginationBar">
+				<div className="paginationBar-sort">
 					<span>
 						{numProducts} of {""}
 						{productData.length} products
 					</span>
-					<div className="filterBar-sort_verticalLine"></div>
-					<span>Sort by:</span>
-					{FILTERS.map((item, index) => {
-						return (
-							<button
-								type="button"
-								value={item.value}
-								className="filterBar-sort_filter"
-								key={index}
-								onClick={handleFilter}
-							>
-								{item.value}
-							</button>
-						);
-					})}
+					<div className="paginationBar-sort_verticalLine"></div>
+					{/* <FilterBar /> */}
 				</div>
-				<div className="filterBar-arrows">
+				<div className="paginationBar-arrows">
 					<img
 						src="/assets/icons/arrow-left.svg"
 						alt="Arrow left icon"
@@ -96,8 +62,8 @@ export default function FilterBar({ dataLimit = 16 }) {
 					/>
 				</div>
 			</div>
-			<div className="filterBar-separator"></div>
-			<ProductsList filteredProducts={filteredProducts} />
+			<div className="paginationBar-separator"></div>
+			{/* <ProductsList filteredProducts={filteredProducts} /> */}
 		</>
 	);
 }

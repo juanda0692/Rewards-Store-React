@@ -6,7 +6,6 @@ import { UserContext } from "../../../../contexts/userContext";
 //Fetch Redeem product
 import { redeemProducts } from "../../../../utilities/fetchInfo";
 
-//SweetAlert2 library
 import Swal from "sweetalert2";
 
 // Styles
@@ -58,19 +57,11 @@ export default function Product({ name, category, img, cost, id }) {
 		<>
 			{!hoverProduct ? (
 				<div className="product" onMouseEnter={() => setHoverProduct(true)}>
-					{cost > userData.points ? (
-						<div className="RedeemInfoContainer">
-							<p>You need {cost - userData.points}</p>
-							<img src="/assets/icons/coin.svg" alt="coin icon" />
-						</div>
-					) : (
-						<img
-							className="product-buyIcon"
-							src="/assets/icons/buy-blue.svg"
-							alt="buy blue icon"
-						/>
-					)}
-
+					<img
+						className="product-buyIcon"
+						src="/assets/icons/buy-blue.svg"
+						alt="buy blue icon"
+					/>
 					<img
 						lazy="loading"
 						className="product-img"
@@ -96,11 +87,8 @@ export default function Product({ name, category, img, cost, id }) {
 							<span>{cost}</span>
 							<img src="/assets/icons/coin.svg" alt="Coin icon" />
 						</div>
-
 						<button
-							className={`product-redeem_button hover ${
-								cost > userData.points ? "display-none" : ""
-							}`}
+							className="product-redeem_button hover"
 							type="button"
 							onClick={() => {
 								redeemMessage();

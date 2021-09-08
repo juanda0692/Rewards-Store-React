@@ -1,20 +1,38 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 
 // Component
 import Product from "./components/Product/Product";
 
 // Context
-// import { ProductContext } from "../../contexts/productContexts.js";
+import { ProductContext } from "../../contexts/productContexts.js";
 import { PaginationContext } from "../../contexts/paginationContext.js";
-// import { FilterContext } from "../../contexts/filterContext";
+import { FilterContext } from "../../contexts/filterContext";
 
 // Styles
 import "./ProductsList.style.css";
 
-export default function ProductsList({ dataLimit = 16, filteredProducts }) {
-	// const [productData] = useContext(ProductContext);
+export default function ProductsList({ dataLimit = 16 }) {
+	const [productData] = useContext(ProductContext);
 	const [currentPage] = useContext(PaginationContext);
-	// const [filter] = useContext(FilterContext);
+	const [filter] = useContext(FilterContext);
+
+	// Conditional Switch to set the products by cost filter
+	const filteredProducts = useMemo(() => {
+		switch (filter) {
+			case "Highest Price": {
+				return [...productData].sort((a, b) => b.cost - a.cost);
+			}
+
+			case "Lowest Price": {
+				return [...productData].sort((a, b) => a.cost - b.cost);
+			}
+
+			case "Most Recent":
+			default: {
+				return productData;
+			}
+		}
+	}, [filter, productData]);
 
 	// Function for slice the product data to calculated the currentPage and dataLimit
 	const getPaginatedData = () => {
