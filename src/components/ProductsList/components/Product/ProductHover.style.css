@@ -85,3 +85,7 @@
 .product-redeem_button.hover:hover {
 	background: linear-gradient(90deg, #f5f7fa 0%, #c3cfe2 100%);
 }
+
+.product-redeem_button.hover.display-none {
+	display: none;
+}

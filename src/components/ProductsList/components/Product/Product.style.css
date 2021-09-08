@@ -46,6 +46,31 @@
 	font-weight: 600;
 }
 
+/* Redeem styles */
+.RedeemInfoContainer {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	padding: 0.3rem 0.5rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 50px;
+	background-color: #616161;
+	opacity: 0.8;
+}
+
+.RedeemInfoContainer p {
+	font-size: 0.8em;
+	color: #fff;
+	padding-right: 0.2rem;
+}
+
+.RedeemInfoContainer img {
+	padding: 0.18rem;
+	width: 1.5rem;
+}
+
 /* SweetAlert2 Custom styles  */
 .swal2-styled.swal2-confirm.swalBtnColor {
 	background-color: #08bbdf;
