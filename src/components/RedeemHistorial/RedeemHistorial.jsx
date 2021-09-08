@@ -9,7 +9,6 @@ import "./RedeemHistorial.style.css";
 
 export default function RedeemHistorial() {
 	const [redeemHistory, setRedeemHistory] = useState([]);
-	console.log(redeemHistory);
 
 	useEffect(() => {
 		getHistory(setRedeemHistory);

@@ -32,6 +32,22 @@ export const getProducts = async (setProductData) => {
 	}
 };
 
+// Get the history of the products that were redeem
+export const getHistory = async (setRedeemData) => {
+	let requestOptions = {
+		method: "GET",
+		headers,
+	};
+
+	try {
+		const result = await fetch(`${API_URL}/user/history`, requestOptions);
+		const res = await result.json();
+		setRedeemData(res);
+	} catch (error) {
+		alert("Ocurrió un error al obtener la información del servidor", error);
+	}
+};
+
 // FETCH POST
 // Add coins to the user through the fetch post to the API
 export const addCoins = async (amount, userData, setUserData) => {
@@ -54,6 +70,7 @@ export const addCoins = async (amount, userData, setUserData) => {
 	}
 };
 
+// Redeem the products and save then in the history fetch
 export const redeemProducts = async (id) => {
 	let redeem = JSON.stringify({ productId: id });
 
@@ -69,23 +86,6 @@ export const redeemProducts = async (id) => {
 		const result = await request();
 		const res = await result.json();
 		return res;
-	} catch (error) {
-		alert("Ocurrió un error al obtener la información del servidor", error);
-	}
-};
-
-console.log(redeemProducts);
-
-export const getHistory = async (setRedeemData) => {
-	let requestOptions = {
-		method: "GET",
-		headers,
-	};
-
-	try {
-		const result = await fetch(`${API_URL}/user/history`, requestOptions);
-		const res = await result.json();
-		setRedeemData(res);
 	} catch (error) {
 		alert("Ocurrió un error al obtener la información del servidor", error);
 	}

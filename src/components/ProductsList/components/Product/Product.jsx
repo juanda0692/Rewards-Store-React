@@ -95,6 +95,11 @@ export default function Product({ name, category, img, cost, id }) {
 							Redeem now
 						</button>
 					</div>
+					{/* <RedeemInfo
+						productCost={cost}
+						userPoints={userPoints}
+						hover={hoverProduct}
+					/> */}
 					<img className="product-img" src={img.hdUrl} alt="product" />
 					<div className="product-separator"></div>
 					<span>{category}</span>

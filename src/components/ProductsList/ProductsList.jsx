@@ -4,22 +4,25 @@ import React, { useContext } from "react";
 import Product from "./components/Product/Product";
 
 // Context
-import { ProductContext } from "../../contexts/productContexts.js";
+// import { ProductContext } from "../../contexts/productContexts.js";
 import { PaginationContext } from "../../contexts/paginationContext.js";
+// import { FilterContext } from "../../contexts/filterContext";
 
 // Styles
 import "./ProductsList.style.css";
 
-export default function ProductsList({ dataLimit = 16 }) {
-	const [productData] = useContext(ProductContext);
+export default function ProductsList({ dataLimit = 16, filteredProducts }) {
+	// const [productData] = useContext(ProductContext);
 	const [currentPage] = useContext(PaginationContext);
+	// const [filter] = useContext(FilterContext);
 
-	// The start index is calculated using the currentPage and dataLimit and the end index is calculated by adding the start index and the dataLimit
+	// Function for slice the product data to calculated the currentPage and dataLimit
 	const getPaginatedData = () => {
 		const startIndex = currentPage * dataLimit - dataLimit;
 		const endIndex = startIndex + dataLimit;
-		return productData.slice(startIndex, endIndex);
+		return filteredProducts.slice(startIndex, endIndex);
 	};
+
 	return (
 		<main className="productsList">
 			{getPaginatedData().map((product) => (
