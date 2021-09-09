@@ -6,6 +6,13 @@
 	padding: 1rem 2rem;
 }
 
+.header-components {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .header-user,
 .header-user_coins {
 	display: flex;
@@ -13,13 +20,13 @@
 }
 
 .header-user {
-	width: 30%;
-	justify-content: space-evenly;
+	justify-content: flex-end;
 }
 
 .header-user span {
 	font-size: 1.2rem;
 	color: #616161;
+	margin-right: 1rem;
 }
 
 .header-user_coins {
@@ -111,4 +118,33 @@
 
 .header-user_redeemed:hover {
 	background-color: #08bbdf;
+}
+
+/* Media queries */
+@media (max-width: 37.5rem) {
+	/* 600px */
+	.header {
+		flex-direction: column;
+		padding: 1rem 1rem;
+		align-items: stretch;
+	}
+	.header-components {
+		justify-content: flex-end;
+	}
+	.header-user {
+		width: 100%;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.header-user span {
+		font-size: 1rem;
+	}
+
+	.header-user_redeemed {
+		margin: 1rem 0 0 0;
+		text-decoration: none;
+		width: 100%;
+	}
 }

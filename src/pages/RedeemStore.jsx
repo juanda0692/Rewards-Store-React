@@ -10,8 +10,10 @@ export default function RedeemStore() {
 	return (
 		<>
 			<Hero />
-			<PaginationBar />
-			<FilterBar />
+			<section className="principalBar">
+				<PaginationBar />
+				<FilterBar />
+			</section>
 			<ProductsList />
 			<PaginationBar />
 		</>

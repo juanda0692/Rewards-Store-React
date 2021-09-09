@@ -1,11 +1,17 @@
 .filterBar {
-	position: relative;
+	position: absolute;
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
 	width: 35%;
+	top: 40%;
 	left: 22%;
-	z-index: 30;
+	z-index: 100;
+}
+
+.filterBar span {
+	color: #9c9c9c;
+	font-size: 1rem;
 }
 
 .filterBar-sort_filter {

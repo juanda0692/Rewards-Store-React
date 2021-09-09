@@ -1,17 +1,11 @@
 import React, { useContext } from "react";
 
-// Components
-// import FilterBar from "../FilterBar/FilterBar";
-
 // Context
 import { ProductContext } from "../../contexts/productContexts";
 import { PaginationContext } from "../../contexts/paginationContext";
-// import { FilterContext, FILTERS } from "../../contexts/filterContext";
 
 // Styles
 import "./PaginationBar.style.css";
-
-// import ProductsList from "../ProductsList/ProductsList";
 
 export default function PaginationBar({ dataLimit = 16 }) {
 	const [productData] = useContext(ProductContext);
@@ -45,7 +39,6 @@ export default function PaginationBar({ dataLimit = 16 }) {
 						{productData.length} products
 					</span>
 					<div className="paginationBar-sort_verticalLine"></div>
-					{/* <FilterBar /> */}
 				</div>
 				<div className="paginationBar-arrows">
 					<img
@@ -63,7 +56,6 @@ export default function PaginationBar({ dataLimit = 16 }) {
 				</div>
 			</div>
 			<div className="paginationBar-separator"></div>
-			{/* <ProductsList filteredProducts={filteredProducts} /> */}
 		</>
 	);
 }
