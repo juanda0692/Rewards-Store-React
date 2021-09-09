@@ -35,8 +35,8 @@ export default function PaginationBar({ dataLimit = 16 }) {
 			<div className="paginationBar">
 				<div className="paginationBar-sort">
 					<span>
-						{numProducts} of {""}
-						{productData.length} products
+						<b>{numProducts}</b> of {""}
+						<b>{productData.length}</b> products
 					</span>
 					<div className="paginationBar-sort_verticalLine"></div>
 				</div>

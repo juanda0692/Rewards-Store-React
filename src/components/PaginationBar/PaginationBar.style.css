@@ -38,6 +38,7 @@
 	align-items: center;
 }
 
+/* Arrow styles */
 .prev,
 .next {
 	border: none;
@@ -53,4 +54,37 @@
 	pointer-events: none;
 	box-shadow: none;
 	color: #999;
+}
+
+/* Media queries */
+
+@media (max-width: 62rem) {
+	/* 992px */
+
+	.paginationBar {
+		width: 100%;
+		padding: 1rem 2rem;
+		font-size: 1rem;
+		justify-content: center;
+	}
+
+	.paginationBar-sort {
+		justify-content: space-evenly;
+		width: 50%;
+	}
+
+	.paginationBar-arrows {
+		width: 35%;
+	}
+
+	.paginationBar-separator {
+		margin: 0 2rem 1rem 2rem;
+	}
+}
+
+@media (min-width: 45rem) {
+	/* 992px */
+	.paginationBar {
+		font-size: 1.2rem;
+	}
 }
