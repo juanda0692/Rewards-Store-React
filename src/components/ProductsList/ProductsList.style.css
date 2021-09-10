@@ -6,3 +6,28 @@
 	gap: 0.8rem;
 	justify-items: center;
 }
+
+/* Media queries */
+@media (max-width: 40rem) {
+	/* 640px */
+	.productsList {
+		padding: 0 2rem;
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+@media (min-width: 40rem) and (max-width: 52.5rem) {
+	/* 640px - 720px */
+	.productsList {
+		padding: 0 6rem;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 52.5rem) and (max-width: 75rem) {
+	/* 840px - 1200px */
+	.productsList {
+		padding: 0 1rem;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

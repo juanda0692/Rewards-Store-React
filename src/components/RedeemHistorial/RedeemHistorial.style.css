@@ -18,3 +18,20 @@
 	padding: 0 5rem;
 	margin-bottom: 3rem;
 }
+
+/* Media queries */
+@media (max-width: 40rem) {
+	/* 640px */
+	.redeemHistory-products {
+		padding: 0 2rem;
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+@media (min-width: 40rem) and (max-width: 52.5rem) {
+	/* 640px - 720px */
+	.redeemHistory-products {
+		padding: 0 2rem;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

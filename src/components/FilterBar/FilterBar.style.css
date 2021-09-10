@@ -28,6 +28,29 @@
 @media (max-width: 62rem) {
 	/* 992px */
 	.filterBar {
+		padding: 0 1rem;
 		position: relative;
+		width: 100%;
+		top: 0;
+		left: 0;
+		flex-wrap: wrap;
+	}
+	.filterBar-sort_filter {
+		margin-top: 0.5rem;
+	}
+}
+
+@media (min-width: 62rem) and (max-width: 75rem) {
+	/* 992-1200px */
+	.filterBar {
+		left: 25%;
+		width: 40%;
+	}
+}
+
+@media (min-width: 45rem) and (max-width: 62rem) {
+	/* 720px-992px */
+	.filterBar {
+		padding: 0 6rem;
 	}
 }

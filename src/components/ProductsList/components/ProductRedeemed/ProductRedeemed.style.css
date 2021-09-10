@@ -1,13 +1,11 @@
 .productRedeem {
 	display: flex;
 	justify-content: center;
-	/* width: 100%; */
 	align-items: center;
 	box-shadow: 9px 10px 10px -5px rgba(0, 0, 0, 0.33);
 	-webkit-box-shadow: 9px 10px 10px -5px rgba(0, 0, 0, 0.33);
 	-moz-box-shadow: 9px 10px 10px -5px rgba(0, 0, 0, 0.33);
 	border-radius: 5px;
-	/* padding: 0.8rem 0rem; */
 }
 .productRedeem-img {
 	max-width: 50%;

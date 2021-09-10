@@ -14,6 +14,7 @@ export default function FilterBar() {
 		setFilter(e.target.value);
 	};
 
+	// useEffect to handle the filter side effects
 	useEffect(() => {
 		setFilter(filter);
 	}, [filter, setFilter]);
