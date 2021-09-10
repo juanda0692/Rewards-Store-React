@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Rewards-Store-React/static/css/main.92de9b6d.chunk.css",
+    "main.js": "/Rewards-Store-React/static/js/main.5a2bd2ad.chunk.js",
+    "main.js.map": "/Rewards-Store-React/static/js/main.5a2bd2ad.chunk.js.map",
+    "runtime-main.js": "/Rewards-Store-React/static/js/runtime-main.96446f85.js",
+    "runtime-main.js.map": "/Rewards-Store-React/static/js/runtime-main.96446f85.js.map",
+    "static/js/2.e2f833b5.chunk.js": "/Rewards-Store-React/static/js/2.e2f833b5.chunk.js",
+    "static/js/2.e2f833b5.chunk.js.map": "/Rewards-Store-React/static/js/2.e2f833b5.chunk.js.map",
+    "static/js/3.ea6d8d7d.chunk.js": "/Rewards-Store-React/static/js/3.ea6d8d7d.chunk.js",
+    "static/js/3.ea6d8d7d.chunk.js.map": "/Rewards-Store-React/static/js/3.ea6d8d7d.chunk.js.map",
+    "index.html": "/Rewards-Store-React/index.html",
+    "static/css/main.92de9b6d.chunk.css.map": "/Rewards-Store-React/static/css/main.92de9b6d.chunk.css.map",
+    "static/js/2.e2f833b5.chunk.js.LICENSE.txt": "/Rewards-Store-React/static/js/2.e2f833b5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.96446f85.js",
+    "static/js/2.e2f833b5.chunk.js",
+    "static/css/main.92de9b6d.chunk.css",
+    "static/js/main.5a2bd2ad.chunk.js"
+  ]
+}
