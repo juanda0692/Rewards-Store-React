@@ -33,7 +33,7 @@ export default function Header() {
 	return (
 		<header className="header">
 			<div className="header-components">
-				<Link to="/">
+				<Link to="/Rewards-Store-React">
 					<img src={`${URLS.publicPath}/assets/aerolab-logo.svg`} alt="Logo" />
 				</Link>
 				<div className="header-user">

@@ -1,5 +1,8 @@
 import React from "react";
 
+// Components
+import { URLS } from "../../../../utilities/utils";
+
 // Styles
 import "./ProductRedeemed.style.css";
 
@@ -16,7 +19,10 @@ export default function ProductRedeem({ img, name, cost }) {
 				<span className="productRedeem-info_cost">
 					<b>Cost: </b>
 					{cost}
-					<img src="/assets/icons/coin.svg" alt="Coin icon" />
+					<img
+						src={`${URLS.publicPath}/assets/icons/coin.svg`}
+						alt="Coin icon"
+					/>
 				</span>
 			</div>
 		</article>

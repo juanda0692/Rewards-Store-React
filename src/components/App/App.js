@@ -26,8 +26,8 @@ function App() {
 						<div className="container">
 							<Header />
 							<Switch>
-								<Route exath path="/" exact component={RedeemStore} />
-								<Route exath="/redeem-history" component={RedeemHistory} />
+								<Route path="/redeem-history" component={RedeemHistory} />
+								<Route path="/Rewards-Store-React" component={RedeemStore} />
 							</Switch>
 						</div>
 					</FilterProvider>

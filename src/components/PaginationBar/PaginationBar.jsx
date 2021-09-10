@@ -4,6 +4,9 @@ import React, { useContext } from "react";
 import { ProductContext } from "../../contexts/productContexts";
 import { PaginationContext } from "../../contexts/paginationContext";
 
+// Components
+import { URLS } from "../../utilities/utils";
+
 // Styles
 import "./PaginationBar.style.css";
 
@@ -42,13 +45,13 @@ export default function PaginationBar({ dataLimit = 16 }) {
 				</div>
 				<div className="paginationBar-arrows">
 					<img
-						src="/assets/icons/arrow-left.svg"
+						src={`${URLS.publicPath}/assets/icons/arrow-left.svg`}
 						alt="Arrow left icon"
 						onClick={previousPage}
 						className={`prev ${currentPage === 1 ? "disabled" : ""}`}
 					/>
 					<img
-						src="/assets/icons/arrow-right.svg"
+						src={`${URLS.publicPath}/assets/icons/arrow-right.svg`}
 						alt="Arrow right icon"
 						onClick={nextPage}
 						className={`next ${currentPage === pages ? "disabled" : ""}`}

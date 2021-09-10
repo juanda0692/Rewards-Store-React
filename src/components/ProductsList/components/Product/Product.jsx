@@ -8,6 +8,9 @@ import { redeemProducts } from "../../../../utilities/fetchInfo";
 
 import Swal from "sweetalert2";
 
+// Components
+import { URLS } from "../../../../utilities/utils";
+
 // Styles
 import "./Product.style.css";
 import "./ProductHover.style.css";
@@ -59,7 +62,7 @@ export default function Product({ name, category, img, cost, id }) {
 				<div className="product" onMouseEnter={() => setHoverProduct(true)}>
 					<img
 						className="product-buyIcon"
-						src="/assets/icons/buy-blue.svg"
+						src={`${URLS.publicPath}/assets/icons/buy-blue.svg`}
 						alt="buy blue icon"
 					/>
 					<img
@@ -80,12 +83,15 @@ export default function Product({ name, category, img, cost, id }) {
 					<div className="product-layer hover">
 						<img
 							className="product-buyIcon hover"
-							src="/assets/icons/buy-white.svg"
+							src={`${URLS.publicPath}/assets/icons/buy-white.svg`}
 							alt="buy white icon"
 						/>
 						<div className="product-value hover">
 							<span>{cost}</span>
-							<img src="/assets/icons/coin.svg" alt="Coin icon" />
+							<img
+								src={`${URLS.publicPath}/assets/icons/coin.svg`}
+								alt="Coin icon"
+							/>
 						</div>
 						<button
 							className="product-redeem_button hover"
