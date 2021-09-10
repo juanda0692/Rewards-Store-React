@@ -6,7 +6,7 @@ const headers = {
 	"Content-Type": "application/json",
 	Accept: "application/json",
 	Authorization:
-		"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTAxYWJhY2Q5MDU1YjAwMjBhNjMzZGEiLCJpYXQiOjE2Mjc0OTk0MzZ9.M7x6M8SXWK4yu70uIXayu8GUSaPMH9M_1s8hfIT1_wA",
+		"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTNiZTVhZDhiZWIxNjAwMjFiODM5Y2YiLCJpYXQiOjE2MzEzMTUzNzN9.Z6xYKdCzgHavruyKGKHzQ-bbNtMg9cwLNQETMzVEhhw",
 };
 
 // FETCH GET
