@@ -60,11 +60,21 @@ export default function Product({ name, category, img, cost, id }) {
 		<>
 			{!hoverProduct ? (
 				<div className="product" onMouseEnter={() => setHoverProduct(true)}>
-					<img
-						className="product-buyIcon"
-						src={`${URLS.publicPath}/assets/icons/buy-blue.svg`}
-						alt="buy blue icon"
-					/>
+					{cost > userData.points ? (
+						<div className="RedeemInfoContainer">
+							<p>You need {cost - userData.points}</p>
+							<img
+								src={`${URLS.publicPath}/assets/icons/coin.svg`}
+								alt="coin icon"
+							/>
+						</div>
+					) : (
+						<img
+							className="product-buyIcon"
+							src={`${URLS.publicPath}/assets/icons/buy-blue.svg`}
+							alt="buy blue icon"
+						/>
+					)}
 					<img
 						lazy="loading"
 						className="product-img"
@@ -94,7 +104,9 @@ export default function Product({ name, category, img, cost, id }) {
 							/>
 						</div>
 						<button
-							className="product-redeem_button hover"
+							className={`product-redeem_button hover ${
+								cost > userData.points ? "display-none" : ""
+							}`}
 							type="button"
 							onClick={() => {
 								redeemMessage();
