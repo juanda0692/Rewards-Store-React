@@ -9,6 +9,9 @@ import { UserContext } from "../../contexts/userContext";
 // React Router DOM
 import { Link } from "react-router-dom";
 
+// Constants
+import { URLS } from "../../utilities/utils";
+
 // Styles
 import "./Header.style.css";
 
@@ -31,7 +34,7 @@ export default function Header() {
 		<header className="header">
 			<div className="header-components">
 				<Link to="/">
-					<img src="/assets/aerolab-logo.svg" alt="Logo" />
+					<img src={`${URLS.publicPath}/assets/aerolab-logo.svg`} alt="Logo" />
 				</Link>
 				<div className="header-user">
 					<span>{userData.name}</span>
@@ -39,7 +42,7 @@ export default function Header() {
 						<span>{userData.points}</span>
 						<img
 							onClick={handleMenuCoins}
-							src="/assets/icons/coin.svg"
+							src={`${URLS.publicPath}/assets/icons/coin.svg`}
 							alt="Coin icon"
 						/>
 						{!menuCoins ? (
@@ -47,15 +50,24 @@ export default function Header() {
 								<h4>Add Coins</h4>
 								<li onClick={() => handlePostCoins(1000)}>
 									<span>1000</span>
-									<img src="/assets/icons/coin.svg" alt="Coin icon" />
+									<img
+										src={`${URLS.publicPath}/assets/icons/coin.svg`}
+										alt="Coin icon"
+									/>
 								</li>
 								<li onClick={() => handlePostCoins(5000)}>
 									<span>5000</span>
-									<img src="/assets/icons/coin.svg" alt="Coin icon" />
+									<img
+										src={`${URLS.publicPath}/assets/icons/coin.svg`}
+										alt="Coin icon"
+									/>
 								</li>
 								<li onClick={() => handlePostCoins(7500)}>
 									<span>7500</span>
-									<img src="/assets/icons/coin.svg" alt="Coin icon" />
+									<img
+										src={`${URLS.publicPath}/assets/icons/coin.svg`}
+										alt="Coin icon"
+									/>
 								</li>
 							</ul>
 						) : null}
